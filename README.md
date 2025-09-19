@@ -1,58 +1,51 @@
-🏫 School Management System API (Django REST Framework)
+# 🏫 School Management System API (Django REST Framework)
+
 A comprehensive RESTful API built with Django and Django REST Framework for managing a school system. This API supports CRUD operations for students, teachers, and courses with relational capabilities.
 
-https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green
-https://img.shields.io/badge/Django_REST-Framework-red?style=for-the-badge
-https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
+![DRF](https://img.shields.io/badge/Django_REST-Framework-red?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-📋 Table of Contents
-Features
+---
 
-Data Model
+## 📋 Table of Contents
 
-Installation & Setup
+- [Features](#-features)
+- [Data Model](#-data-model)
+- [Installation & Setup](#-installation--setup)
+- [API Endpoints](#-api-endpoints)
+- [Usage Examples](#-usage-examples)
+- [Admin Interface](#-admin-interface)
+- [Contributing](#-contributing)
+- [Author](#-author)
 
-API Endpoints
+---
 
-Usage Examples
+## 🚀 Features
 
-Admin Interface
+- **Student Management**
+  - Create, read, update, and delete student records
+  - Fields: First Name, Last Name, Age, Grade
 
-Contributing
+- **Teacher Management**
+  - Create, read, update, and delete teacher records
+  - Fields: Name, Subject
 
-Author
+- **Course Management**
+  - Create, read, update, and delete courses
+  - Assign students and teachers to courses
+  - Many-to-Many relationships between courses and students/teachers
 
-🚀 Features
-Student Management
+- **RESTful Design**
+  - Proper HTTP status codes
+  - JSON request/response format
+  - Resource-based URL structure
 
-Create, read, update, and delete student records
+---
 
-Fields: First Name, Last Name, Age, Grade
+## 🗄️ Data Model
 
-Teacher Management
-
-Create, read, update, and delete teacher records
-
-Fields: Name, Subject
-
-Course Management
-
-Create, read, update, and delete courses
-
-Assign students and teachers to courses
-
-Many-to-Many relationships between courses and students/teachers
-
-RESTful Design
-
-Proper HTTP status codes
-
-JSON request/response format
-
-Resource-based URL structure
-
-🗄️ Data Model
-plaintext
+```plaintext
 +----------+       +---------+       +----------+
 | Teacher  |       | Course  |       | Student  |
 +----------+       +---------+       +----------+
@@ -66,79 +59,66 @@ plaintext
 Clone the repository
 
 bash
-git clone https://github.com/your-username/school_api.git
-cd school_api
+نسخ الكود
+git clone https://github.com/your-username/school-api.git
+cd school-api
 Create and activate a virtual environment
 
 bash
-# Using virtualenv
+نسخ الكود
 python -m venv venv
-
 # Windows
 venv\Scripts\activate
-
 # Mac/Linux
 source venv/bin/activate
 Install dependencies
 
 bash
+نسخ الكود
 pip install django djangorestframework
 Apply migrations
 
 bash
+نسخ الكود
 python manage.py makemigrations
 python manage.py migrate
 Create a superuser (optional, for admin access)
 
 bash
+نسخ الكود
 python manage.py createsuperuser
 Start the development server
 
 bash
+نسخ الكود
 python manage.py runserver
-The API will be available at http://localhost:8000/
+🌐 API Endpoints
+Resource	URL	Method	Description
+Students	/api/students/	GET	List all students
+Students	/api/students/	POST	Create a new student
+Students	/api/students/{id}/	GET	Retrieve student details
+Students	/api/students/{id}/	PUT	Update student
+Students	/api/students/{id}/	DELETE	Delete student
+Teachers	/api/teachers/	GET/POST	CRUD for teachers
+Courses	/api/courses/	GET/POST	CRUD for courses
 
-📊 API Endpoints
-Students
-Method	Endpoint	Description
-GET	/api/students/	List all students
-POST	/api/students/	Create a new student
-GET	/api/students/{id}/	Retrieve a specific student
-PUT	/api/students/{id}/	Update a student
-PATCH	/api/students/{id}/	Partially update a student
-DELETE	/api/students/{id}/	Delete a student
-Teachers
-Method	Endpoint	Description
-GET	/api/teachers/	List all teachers
-POST	/api/teachers/	Create a new teacher
-GET	/api/teachers/{id}/	Retrieve a specific teacher
-PUT	/api/teachers/{id}/	Update a teacher
-PATCH	/api/teachers/{id}/	Partially update a teacher
-DELETE	/api/teachers/{id}/	Delete a teacher
-Courses
-Method	Endpoint	Description
-GET	/api/courses/	List all courses
-POST	/api/courses/	Create a new course
-GET	/api/courses/{id}/	Retrieve a specific course
-PUT	/api/courses/{id}/	Update a course
-PATCH	/api/courses/{id}/	Partially update a course
-DELETE	/api/courses/{id}/	Delete a course
-💻 Usage Examples
-Create a Student (POST /api/students/)
-Request:
+All data is returned in JSON format.
 
-bash
-curl -X POST http://localhost:8000/api/students/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "first_name": "Alice",
-    "last_name": "Johnson",
-    "age": 20,
-    "grade": 85
-  }'
+🧑‍💻 Usage Examples
+Add a student (POST /api/students/):
+
+json
+نسخ الكود
+{
+  "first_name": "Alice",
+  "last_name": "Johnson",
+  "age": 20,
+  "grade": 85
+}
 Response:
 
 json
+نسخ الكود
 {
   "id": 1,
   "first_name": "Alice",
@@ -146,72 +126,56 @@ json
   "age": 20,
   "grade": 85
 }
-Create a Course with Teacher and Students (POST /api/courses/)
-Request:
-
-bash
-curl -X POST http://localhost:8000/api/courses/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "Mathematics 101",
-    "teacher": 1,
-    "students": [1, 2, 3]
-  }'
-Response:
+Get all students (GET /api/students/):
 
 json
-{
-  "id": 1,
-  "title": "Mathematics 101",
-  "teacher": {
+نسخ الكود
+[
+  {
     "id": 1,
-    "name": "Dr. Smith",
-    "subject": "Mathematics"
+    "first_name": "Alice",
+    "last_name": "Johnson",
+    "age": 20,
+    "grade": 85
   },
-  "students": [
-    {
-      "id": 1,
-      "first_name": "Alice",
-      "last_name": "Johnson",
-      "age": 20,
-      "grade": 85
-    },
-    {
-      "id": 2,
-      "first_name": "Bob",
-      "last_name": "Williams",
-      "age": 19,
-      "grade": 78
-    },
-    {
-      "id": 3,
-      "first_name": "Charlie",
-      "last_name": "Brown",
-      "age": 21,
-      "grade": 92
-    }
-  ]
-}
-👨‍💼 Admin Interface
-The Django admin interface is available at /admin/ after creating a superuser. This provides a graphical interface to manage all data models.
+  {
+    "id": 2,
+    "first_name": "Bob",
+    "last_name": "Smith",
+    "age": 19,
+    "grade": 90
+  }
+]
+🏢 Admin Interface
+Access the admin panel at /admin/
+
+Requires superuser credentials created during setup
 
 🤝 Contributing
 Fork the repository
 
-Create a feature branch (git checkout -b feature/amazing-feature)
+Create a new branch: git checkout -b feature-name
 
-Commit your changes (git commit -m 'Add some amazing feature')
+Make your changes
 
-Push to the branch (git push origin feature/amazing-feature)
+Commit: git commit -m 'Add feature'
 
-Open a Pull Request
+Push to the branch: git push origin feature-name
+
+Create a pull request
 
 🛡️ Author
-Your Name - @your-github-username
+Your Name (@your-github-username)
 
-📝 Notes
-Make sure to run the server in the virtual environment where Django is installed
+🏷️ Badges
 
-Use tools like Postman, curl, or HTTPie to test the API endpoints
 
-The admin panel provides an alternative way to manage data at /admin/
+
+yaml
+نسخ الكود
+
+---
+
+If you want, I can also **make a version with Mermaid.js diagrams** so GitHub renders a **real graphical diagram** for Student ↔ Course ↔ Teacher relationships — looks way more professional than ASCII.  
+
+Do you want me to do that next?
