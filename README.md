@@ -871,11 +871,11 @@ SOFTWARE.
 
 **Your Name** - *Full Stack Developer*
 
-- 🌐 Website: [yourwebsite.com](https://yourwebsite.com)
-- 💼 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- 🐙 GitHub: [@your-github-username](https://github.com/your-github-username)
-- 📧 Email: your.email@domain.com
-- 🐦 Twitter: [@yourtwitterhandle](https://twitter.com/yourtwitterhandle)
+- 🌐 Website: [yourwebsite.com](Notyet)
+- 💼 LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/ezz-masre-67b070342/)
+- 🐙 GitHub: [@your-github-username]([(https://github.com/ezzmasre)])
+- 📧 Email: ezzmasre2002@gmail.com
+- 
 
 ### 🤝 Connect With Me
 
