@@ -871,9 +871,9 @@ SOFTWARE.
 
 **Your Name** - *Full Stack Developer*
 
-- 🌐 Website: [yourwebsite.com](Notyet)
-- 💼 LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/ezz-masre-67b070342/)
-- 🐙 GitHub: [@your-github-username]([(https://github.com/ezzmasre)])
+- 🌐 Website: [notyet](Notyet)
+- 💼 LinkedIn: [ezzmasre](https://www.linkedin.com/in/ezz-masre-67b070342/)
+- 🐙 GitHub: [ezzmasre]([(https://github.com/ezzmasre)])
 - 📧 Email: ezzmasre2002@gmail.com
 - 
 
