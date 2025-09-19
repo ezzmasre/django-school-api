@@ -124,7 +124,7 @@ erDiagram
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/school-management-api.git
+git clone https://github.com/ezzmasre/school-management-api.git
 cd school-management-api
 
 # Set up virtual environment
@@ -157,7 +157,7 @@ Visit `http://127.0.0.1:8000/api/` to access the API!
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/school-management-api.git
+   git clone https://github.com/ezzmasre/school-management-api.git
    cd school-management-api
    ```
 
